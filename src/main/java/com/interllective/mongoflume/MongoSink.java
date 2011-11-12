@@ -3,15 +3,12 @@ package com.interllective.mongoflume;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import com.cloudera.flume.conf.Context;
 import com.cloudera.flume.conf.SinkFactory.SinkBuilder;
 import com.cloudera.flume.core.Event;
 import com.cloudera.flume.core.EventSink;
-import com.cloudera.flume.reporter.ReportEvent;
-import com.cloudera.flume.reporter.Reportable;
 import com.cloudera.util.Pair;
 import com.google.common.base.Preconditions;
 import com.mongodb.BasicDBObject;
@@ -77,30 +74,6 @@ public class MongoSink extends EventSink.Base {
 
 	}
 
-	public ReportEvent getMetrics() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Map<String, Reportable> getSubMetrics() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ReportEvent getReport() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void getReports(String arg0, Map<String, ReportEvent> arg1) {
-		// TODO Auto-generated method stub
-
-	}
 
 	public static SinkBuilder builder() {
 		return new SinkBuilder() {
