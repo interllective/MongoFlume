@@ -42,3 +42,27 @@ By default, MongoFlume writes events using the SAFE MongoDB write concern, meani
 
 Write concern can be one of: NONE NORMAL SAFE MAJORITY FSYNC_SAFE JOURNAL_SAFE REPLICAS_SAFE. For more info, see http://api.mongodb.org/java/current/
 
+
+# Behavior
+
+MongoFlume will write the body, timestamp, and any metadata key-value pairs found in every event to the MongoDB database and collection specified.
+
+For example, if an event appeared with the following data:
+
+    body: "this is an example"
+    timestamp: 12345456567
+    author: "bob"
+    recipient: "fred"
+    
+MongoFlume would write the following document to MongoDB:
+
+    {
+      body: "this is an example",
+      
+      timestamp: NumberLong("12345456567"),
+      
+      author: "bob",
+      
+      recipient: "fred"
+    }
+
